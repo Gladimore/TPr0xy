@@ -1,0 +1,27 @@
+{
+  "name": "tProxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "public/lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "jsdom": "^16.7.0",
+    "public": "^0.1.5",
+    "querystring": "^0.2.1",
+    "ws": "^7.5.9",
+    "zlib": "^1.0.5"
+  }
+}
