@@ -5,7 +5,7 @@ const https = require("https");
 const fs = require("fs");
 
 // CONFIGURATION
-const prefix = "/web"; // Set your prefix here
+const prefix = "/web/"; // Set your prefix here
 const localAddresses = []; // Set your local addresses here
 const blockedHostnames = ["https://sevenworks.eu.org/bad-site"]; // Set your blocked hostnames here
 const ssl = false; // Set SSL configuration here
@@ -14,6 +14,7 @@ const index_file = "index.html"; // Set index file shown by the browser
 // END OF CONFIGURATION
 
 app0.use(express.static("public"));
+app0.use(prefix, express.static('public'))
 app0.listen(port[1]);
 
 const proxy = new (require("./public/lib/index.js"))(prefix, {
