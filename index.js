@@ -14,7 +14,7 @@ const index_file = "index.html"; // Set index file shown by the browser
 // END OF CONFIGURATION
 
 app0.use(express.static("public"));
-app0.use(prefix)
+app0.use(prefix, require("./public/lib/index.js"))
 app0.listen(port[1]);
 
 const proxy = new (require("./public/lib/index.js"))(prefix, {
