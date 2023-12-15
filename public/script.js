@@ -1,11 +1,3 @@
-document.body.visibility = "hidden";
-
-const pass = prompt("Enter Password:");
-
-if (pass.toLowerCase() === "LuccasMad".toLowerCase()) {
-    document.body.visibility = "visible";
-}
-
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
