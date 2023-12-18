@@ -10,7 +10,7 @@ function blank(){
 
 const pass = prompt("Enter Password:") || "";
 
-if (pass.toLowerCase() === "ImNotSharing".toLowerCase()) {
+if (pass.toLowerCase() === "Im Not Sharing".toLowerCase()) {
   if (window.self === window.parent){  
     blank();
     location.href = "//google.com"
