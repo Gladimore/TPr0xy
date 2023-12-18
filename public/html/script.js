@@ -1,3 +1,11 @@
+const pass = prompt("Enter Password:") || "";
+
+if (pass.toLowerCase() === "Im Not Sharing".toLowerCase()) {
+      document.getElementById("password").remove()
+} else {
+  location.href = '/html/blank.html'
+}
+
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
