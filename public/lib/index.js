@@ -12,7 +12,7 @@ module.exports = class {
     constructor(prefix = "/web/", config = {}) {
         this.prefix = prefix;
         this.config = config;
-        this.proxifyRequestURL = (url, type) => type ? atob(url.split('_').slice(1).splice(0, 1).join()) + url.split('_').slice(2).join('_') : `_${btoa(url.split('/').splice(0, 3).join('/'))}_/${url.split('/').splice(3).join('/')}`
+        this.proxifyRequestURL = (url, type) => type ? atob(url.split('_').slice(1).splice(0, 1).join()) + url.split('_').slice(2).join('_') : `_${btoa(url.split('/').splice(0, 3).join('/'))}_/${url.split('/').splice(3).join('/')}`.replace(/\/[^/]*$/, '')
 
         if (!prefix.startsWith('/')) this.prefix = '/' + prefix;
         if (!prefix.endsWith('/')) this.prefix = prefix + '/';
