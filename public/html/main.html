@@ -17,19 +17,19 @@
       body {
         background-color: #edf6ff;
         margin: 0px;
-
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
 
         -webkit-user-select: none; /* Safari */
         -ms-user-select: none; /* IE 10 and IE 11 */
         user-select: none; /* Standard syntax */
       }
+      
       h1 {
         font-size: 2em;
         margin-bottom: -3px;
@@ -68,6 +68,7 @@
         width: 100vw;
         height: 100vh;
         visibility: hidden;
+        z-index: 9e9;
       }
 
       .overlayText {
@@ -78,50 +79,56 @@
         transform: translate(-50%, -50%);
         color: #000;
       }
-      .links{
-        flex-direction: row;
-        align-items: none;
-        justify-content: none;
-        height: 10vh;
+
+      .links {
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 5px;
+        margin-top: 50vh;
+        
+        border-radius: 25px;
+        border: 2px solid #000000;
+
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
       }
-      .txt{
-        color: white;
-        display: inline-block;
-        margin-right: 4px;
-        border: 3px solid black;
-        background-color: black;
-        border-radius: 5px;
+      
+      .links h3{
+        margin: 7px;
       }
-      .txt:hover{
-          border: 5px solid black;
+      .links h3:hover{
+        background-color: #f0f5fc;
       }
     </style>
   </head>
   <body>
-    <h1>tPr0xy</h1>
-    <div class="overlay" id="password" style="visibility: visible">
-      <h1 class="overlayText">Doing Password ...</h1>
+    <h1 class="center">tPr0xy</h1>
+    <div class="overlay center" id="password" style="visibility: visible">
+      <h1 class="overlayText center">Doing Password ...</h1>
     </div>
 
-    <div class="overlay">
+    <div class="overlay center">
       <h1 class="overlayText">Website Loading</h1>
     </div>
 
-    <div class="search-container">
+    <div class="search-container center">
       <input
         type="text"
         placeholder="Enter URL and hit the icon on the right... (Or press enter)"
         maxlength="100"
       />
-      <div class="search-icon">
-        <i class="fas fa-search" onclick="getSite()"></i>
+      <div class="search-icon center">
+        <i class="fas fa-search center" onclick="getSite()"></i>
       </div>
     </div>
 
     <div class="links">
-      <h2>Quick Links:</h2>
     </div>
 
+    
     <script src="./script.js"></script>
   </body>
 </html>
