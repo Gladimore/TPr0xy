@@ -9,13 +9,17 @@ window.addEventListener('load', function() {
   loadingOverlay.style.visiblity = "hidden";
 });
 
-const pass = prompt("Enter Password:") || "";
+fetch('./password.json')
+.then((res) => res.json())
+.then((data) => {
+  const pass = prompt("Enter Password:") || "";
 
-if (pass.toLowerCase() === "Im not sharing".toLowerCase()) {
-  document.getElementById("password").remove();
-} else {
-  location.href = "/html/blank.html";
-}
+  if (pass.toLowerCase() === data[0].toLowerCase()) {
+    passwordOverlay.remove();
+  } else {
+    location.href = "/html/blank.html";
+  }
+})
 
 fetch("./app.json")
   .then((res) => res.json())
