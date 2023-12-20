@@ -1,5 +1,6 @@
 const input = document.querySelector("input");
-const loadingOverlay = document.querySelector(".overlay")
+const passwordOverlay = document.getElementById('password')
+const loadingOverlay = document.getElementById("websiteLoading")
 const links = document.querySelector(".links");
 
 loadingOverlay.style.visiblity = "visible";
@@ -10,7 +11,7 @@ window.addEventListener('load', function() {
 
 const pass = prompt("Enter Password:") || "";
 
-if (pass.toLowerCase() === "Im not sharing".toLowerCase()) {
+if (pass.toLowerCase() === "".toLowerCase()) {
   document.getElementById("password").remove();
 } else {
   location.href = "/html/blank.html";
@@ -46,9 +47,9 @@ function validSite(){
 }
 
 function getSite(url) {  
-  url = url || input.value
+  url = url || input.value || ""
   
-  if (isValidURL(url)){
+  if (isValidURL(url) && !url.includes('web')){
     validSite()
     
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
