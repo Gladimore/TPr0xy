@@ -1,3 +1,13 @@
+const input = document.querySelector("input");
+const loadingOverlay = document.querySelector(".overlay")
+const links = document.querySelector(".links");
+
+loadingOverlay.style.visiblity = "visible";
+
+window.addEventListener('load', function() {
+  loadingOverlay.style.visiblity = "hidden";
+});
+
 const pass = prompt("Enter Password:") || "";
 
 if (pass.toLowerCase() === "Im not sharing".toLowerCase()) {
@@ -5,9 +15,6 @@ if (pass.toLowerCase() === "Im not sharing".toLowerCase()) {
 } else {
   location.href = "/html/blank.html";
 }
-
-const input = document.querySelector("input");
-const links = document.querySelector(".links");
 
 fetch("./app.json")
   .then((res) => res.json())
@@ -36,7 +43,7 @@ function isValidURL(string) {
 
 function validSite(){
   links.remove()
-  document.querySelector(".overlay").style.visibility = "visible";
+  loadingOverlay.style.visibility = "visible";
 }
 
 function getSite() {  
