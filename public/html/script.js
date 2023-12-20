@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
   loadingOverlay.style.visiblity = "hidden";
 });
 
-fetch('./password.json')
+fetch('./data/password.json')
 .then((res) => res.json())
 .then((data) => {
   const pass = prompt("Enter Password:") || "";
@@ -21,7 +21,7 @@ fetch('./password.json')
   }
 })
 
-fetch("./app.json")
+fetch("./data/app.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((app) => {
