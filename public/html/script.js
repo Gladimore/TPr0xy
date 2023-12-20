@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
 
 const pass = prompt("Enter Password:") || "";
 
-if (pass.toLowerCase() === "".toLowerCase()) {
+if (pass.toLowerCase() === "Im not sharing".toLowerCase()) {
   document.getElementById("password").remove();
 } else {
   location.href = "/html/blank.html";
