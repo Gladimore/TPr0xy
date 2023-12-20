@@ -24,8 +24,7 @@ fetch("./app.json")
       h3.textContent = app[0];
       links.appendChild(h3);
       h3.addEventListener("click", () => {
-        input.value = app[1]
-        getSite();
+        getSite(app[1]);
       });
     });
   });
@@ -46,8 +45,8 @@ function validSite(){
   loadingOverlay.style.visibility = "visible";
 }
 
-function getSite() {  
-  let url = input.value
+function getSite(url) {  
+  url = url || input.value
   
   if (isValidURL(url)){
     validSite()
@@ -63,10 +62,9 @@ function getSite() {
       validSite();
       url = "//" + location.hostname + url
 
-      console.log(url)
       location.href = url
     } else{
-       alert('Choose a valid url')
+       alert('Choose a valid url 🤓')
     }
   }
 }
