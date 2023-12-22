@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tProxy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel = 'stylesheet' href = "./style.css"/>
+  </head>
+  <body>
+    <h1 class="center">tPr0xy</h1>
+    <div class="overlay center" id="password" style="visibility: visible">
+      <h1 class="overlayText center">Doing Password ...</h1>
+    </div>
+
+    <div class="overlay center" id="websiteLoading">
+      <h1 class="overlayText">Website Loading</h1>
+    </div>
+
+    <div class="search-container center">
+      <input
+        type="text"
+        placeholder="Enter URL and hit the icon on the right... (Or press enter)"
+        maxlength="100"
+      />
+      <div class="search-icon center">
+        <i class="fas fa-search center" onclick="getSite()"></i>
+      </div>
+    </div>
+
+    <div class="links"></div>
+    
+    <div class='bottomLeft'>
+      <a href="https://github.com/Gladimore">Github</a>
+      <a href="./credits.html">Credits</a>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
