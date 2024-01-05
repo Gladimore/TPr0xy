@@ -1,7 +1,11 @@
 [
   [
     "Now.gg",
-    "now.gg"
+    "https://now.gg"
+  ],
+  [
+    "Fortnite",
+    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/play/epic-games/7308/fortnite"
   ],
   [
     "Roblox",
@@ -13,14 +17,14 @@
   ],
   [
     "Call of Duty",
-    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/apps/activision-publishing-inc/7935/call-of-duty.html"
+    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/play/activision-publishing-inc/7935/call-of-duty"
   ],
   [
     "Stumble Guys: Multiplayer Royale",
-    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/apps/kitka-games/7999/stumble-guys.html"
+    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/play/kitka-games/7999/stumble-guys"
   ],
   [
     "EA SPORTS FC MOBILE 24 SOCCER",
-    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/apps/electronic-arts/1353/ea-sports-fc-mobile-24-soccer.html"
+    "/web/_aHR0cHM6Ly9ub3cuZ2c=_/play/electronic-arts/1353/ea-sports-fc-mobile-24-soccer"
   ]
 ]
