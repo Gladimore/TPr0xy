@@ -33,9 +33,9 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  let user = getCookie("password");
+  let password = getCookie("password");
   
-  if (user != "") {
+  if (password != "") {
     passwordOverlay.remove();
   } else {
     fetch('./data/password.json')
@@ -52,8 +52,7 @@ function checkCookie() {
     })
   }
 }
-
-window.onload = checkCookie();
+checkCookie();
 
 fetch("./data/app.json")
   .then((res) => res.json())
