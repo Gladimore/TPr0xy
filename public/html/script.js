@@ -44,7 +44,7 @@ function checkCookie() {
       const pass = prompt("Enter Password:") || "";
 
       if (pass.toLowerCase() === data[0].toLowerCase()) {
-        setCookie("password", pass, 1);
+        setCookie("password", true, 1);
         passwordOverlay.remove();
       } else {
         location.href = "/html/blank.html";
