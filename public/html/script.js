@@ -9,17 +9,51 @@ window.addEventListener('load', function() {
   loadingOverlay.style.visiblity = "hidden";
 });
 
-fetch('./data/password.json')
-.then((res) => res.json())
-.then((data) => {
-  const pass = prompt("Enter Password:") || "";
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 
-  if (pass.toLowerCase() === data[0].toLowerCase()) {
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("password");
+  
+  if (user != "") {
     passwordOverlay.remove();
   } else {
-    location.href = "/html/blank.html";
+    fetch('./data/password.json')
+    .then((res) => res.json())
+    .then((data) => {
+      const pass = prompt("Enter Password:") || "";
+
+      if (pass.toLowerCase() === data[0].toLowerCase()) {
+        setCookie("password", pass, 1);
+        passwordOverlay.remove();
+      } else {
+        location.href = "/html/blank.html";
+      }
+    })
   }
-})
+}
+
+window.onload = checkCookie();
 
 fetch("./data/app.json")
   .then((res) => res.json())
