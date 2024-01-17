@@ -35,7 +35,7 @@ function getCookie(cname) {
 window.onload = function(){
   let password = getCookie("password");
   
-  if (password != "") {
+  if (password == true) {
       passwordOverlay.remove();
     } else {
       fetch('./data/password.json')
