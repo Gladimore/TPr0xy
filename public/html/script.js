@@ -32,23 +32,25 @@ function getCookie(cname) {
   return "";
 }
 
-let password = getCookie("password");
+window.onload = function(){
+  let password = getCookie("password");
+  
+  if (password != "") {
+      passwordOverlay.remove();
+    } else {
+      fetch('./data/password.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const pass = prompt("Enter Password:") || "";
 
-if (password != "") {
-    passwordOverlay.remove();
-  } else {
-    fetch('./data/password.json')
-    .then((res) => res.json())
-    .then((data) => {
-      const pass = prompt("Enter Password:") || "";
-
-      if (pass.toLowerCase() === data[0].toLowerCase()) {
-        setCookie("password", true, 1);
-        passwordOverlay.remove();
-      } else {
-        location.href = "/html/blank.html";
-      }
-    })
+        if (pass.toLowerCase() === data[0].toLowerCase()) {
+          setCookie("password", true, 1);
+          passwordOverlay.remove();
+        } else {
+          location.href = "/html/blank.html";
+        }
+      })
+  }
 }
 
 fetch("./data/app.json")
