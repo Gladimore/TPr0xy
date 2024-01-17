@@ -7,24 +7,6 @@ loadingOverlay.style.visiblity = "visible";
 
 window.addEventListener('load', function() {
   loadingOverlay.style.visiblity = "hidden";
-
-  let password = getCookie("password");
-  
-  if (password != "") {
-      passwordOverlay.remove();
-    } else {
-      fetch('./data/password.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const pass = prompt("Enter Password:") || "";
-
-        if (pass.toLowerCase() === data[0].toLowerCase()) {
-          setCookie("password", true, 1);
-          passwordOverlay.remove();
-        } else {
-          location.href = "/html/blank.html";
-        }
-    })
 });
 
 function setCookie(cname,cvalue,exdays) {
@@ -38,6 +20,7 @@ function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
+  
   for(let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
@@ -48,6 +31,27 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+window.onload = function(){
+  let password = getCookie("password");
+  
+  if (password != "" || password == undefined) {
+      passwordOverlay.remove();
+    } else {
+      fetch('./data/password.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const pass = prompt("Enter Password:") || "";
+
+        if (pass.toLowerCase() === data[0].toLowerCase()) {
+          setCookie("password", true, 1);
+          passwordOverlay.remove();
+        } else {
+          location.href = "/html/blank.html";
+        }
+      })
+  }
 }
 
 fetch("./data/app.json")
