@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
 
   let password = getCookie("password");
   
-  if (password == true) {
+  if (password != "") {
       passwordOverlay.remove();
     } else {
       fetch('./data/password.json')
