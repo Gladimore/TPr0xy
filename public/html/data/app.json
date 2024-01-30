@@ -1,32 +1,32 @@
-[
-  {
+const data = [
+	{
     name: "Now.gg",
     link: "https://now.gg"
-    },
+  },
   {
     name: "Genshin Impact",
     link: "https://now.gg/play/cognosphere-pte-ltd-/1773/genshin-impact"
-    },
+  },
   {
     name: "Fortnite",
     link: "https://now.gg/play/epic-games/7308/fortnite"
-    },
+  },
   {
     name: "Roblox",
     link: "https://now.gg/play/roblox-corporation/5349/roblox"
-    },
+  },
   {
     name: "Madden Mobile",
     link: "https://now.gg/play/electronic-arts/1731/madden-nfl-24-mobile-football"
-    },
+  },
   {
     name: "Call of Duty",
     link: "https://now.gg/play/activision-publishing-inc/7935/call-of-duty"
-    },
+  },
   {
     name: "Stumble Guys: Multiplayer Royale",
     link: "https://now.gg/play/kitka-games/7999/stumble-guys"
-    },
+  },
   {
     name: "EA SPORTS FC MOBILE 24 SOCCER",
     link: "https://now.gg/play/electronic-arts/1353/ea-sports-fc-mobile-24-soccer"
