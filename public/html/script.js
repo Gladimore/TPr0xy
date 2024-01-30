@@ -59,10 +59,10 @@ fetch("./data/app.json")
   .then((data) => {
     data.forEach((app) => {
       let h3 = document.createElement("h3");
-      h3.textContent = app[0];
+      h3.textContent = app.name || app[0];
       links.appendChild(h3);
       h3.addEventListener("click", () => {
-        getSite(app[1]);
+        getSite(app.link || app[1]);
       });
     });
   });
