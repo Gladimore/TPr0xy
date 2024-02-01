@@ -93,7 +93,11 @@ window.onload = function () {
       [
         "TikTok",
         "https://now.gg/play/tiktok/4478/tiktok",
-      ]
+      ],
+    [
+      "Youtube",
+      "https://now.gg/play/google-llc/1395/youtube"
+    ]
     ]
   data.forEach((app) => {
     let h3 = document.createElement("h3");
